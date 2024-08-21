@@ -132,6 +132,7 @@ async def start(client, message):
             title = msg.get("title")
             size=get_size(int(msg.get("size", 0)))
             f_caption=msg.get("caption", "")
+            protect_content=True
             if BATCH_FILE_CAPTION:
                 try:
                     f_caption=BATCH_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
@@ -176,7 +177,7 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', True),
+                    protect_content=True,
                     reply_markup=reply_markup
                 )
                 filesarr.append(msg)
@@ -188,7 +189,7 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', True),
+                    protect_content=True,
                     reply_markup=InlineKeyboardMarkup(button)
                 )
                 filesarr.append(msg)
