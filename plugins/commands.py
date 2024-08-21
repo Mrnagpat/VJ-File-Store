@@ -138,6 +138,7 @@ async def start(client, message):
                 except Exception as e:
                     logger.exception(e)
                     f_caption=f_caption
+                    protect_content=True
             if f_caption is None:
                 f_caption = f"{title}"
             try:
@@ -237,6 +238,7 @@ async def start(client, message):
             title = '@MoviesMagaa  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
             size=get_size(file.file_size)
             f_caption = f"<code>{title}</code>"
+            protect_content=True
             if CUSTOM_FILE_CAPTION:
                 try:
                     f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
