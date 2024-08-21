@@ -131,7 +131,7 @@ async def start(client, message):
         for msg in msgs:
             title = msg.get("title")
             size=get_size(int(msg.get("size", 0)))
-            f_caption=f_caption
+            f_caption=msg.get("caption", "f_caption")
             protect_content=True
             if BATCH_FILE_CAPTION:
                 try:
