@@ -18,9 +18,9 @@ def is_enabled(value, default):
         return default
       
 # Bot Information
-API_ID = int(environ.get("API_ID", "19135359"))
-API_HASH = environ.get("API_HASH", "a0066777e1f71b67eb810826b681e555")
-BOT_TOKEN = environ.get("BOT_TOKEN", "7097469887:AAGTXlQav2cqBvS02iKN12EPG_vhuJ8Ca74")
+API_ID = int(environ.get("API_ID", ""))
+API_HASH = environ.get("API_HASH", "")
+BOT_TOKEN = environ.get("BOT_TOKEN", "")
 
 PICS = (environ.get('PICS', 'https://telegra.ph/file/6d8b1d3403448d11ed88d.jpg')).split() # Bot Start Picture
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5436121142').split()]
@@ -35,8 +35,8 @@ CLONE_DB_URI = environ.get("CLONE_DB_URI", "")
 CDB_NAME = environ.get("CDB_NAME", "clonetechvj")
 
 # Database Information
-DB_URI = environ.get("DB_URI", "mongodb+srv://FileShare:FileShare@fileshare.2scs9.mongodb.net/?retryWrites=true&w=majority&appName=FileShare")
-DB_NAME = environ.get("DB_NAME", "FileShare")
+DB_URI = environ.get("DB_URI", "")
+DB_NAME = environ.get("DB_NAME", "")
 
 # Auto Delete Information
 AUTO_DELETE_MODE = bool(environ.get('AUTO_DELETE_MODE', False)) # Set True or False
